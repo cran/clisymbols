@@ -72,6 +72,7 @@ for (i in seq_along(symbol)) {
 #> ●	bullet
 #> ․	dot
 #> ─	line
+#> ═	double_line
 #> …	ellipsis
 #> ❯	pointer
 #> ℹ	info
@@ -94,6 +95,17 @@ for (i in seq_along(symbol)) {
 #> ≠	neq
 #> ≥	geq
 #> ≤	leq
+#> ▔	upper_block_1
+#> ▀	upper_block_4
+#> ▁	lower_block_1
+#> ▂	lower_block_2
+#> ▃	lower_block_3
+#> ▄	lower_block_4
+#> ▅	lower_block_5
+#> ▆	lower_block_6
+#> ▇	lower_block_7
+#> █	lower_block_8
+#> █	full_block
 ```
 
 ### Fallback symbols
@@ -120,6 +132,7 @@ ASCII substitutes are used:
 #> *   bullet
 #> .   dot
 #> ─   line
+#> =   double_line
 #> ... ellipsis
 #> >   pointer
 #> i   info
@@ -142,6 +155,17 @@ ASCII substitutes are used:
 #> !=  neq
 #> >=  geq
 #> <=  leq
+#> ^   upper_block_1
+#> ^   upper_block_4
+#> .   lower_block_1
+#> _   lower_block_2
+#> _   lower_block_3
+#> =   lower_block_4
+#> =   lower_block_5
+#> *   lower_block_6
+#> █   lower_block_7
+#> █   lower_block_8
+#> █   full_block
 ```
 
 # License

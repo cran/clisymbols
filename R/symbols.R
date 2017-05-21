@@ -40,6 +40,7 @@ symbol_utf8 <- list(
   "bullet" = '\u25CF',
   "dot" = '\u2024',
   "line" = '\u2500',
+  "double_line" = "\u2550",
   "ellipsis" = '\u2026',
   "pointer" = '\u276F',
   "info" = '\u2139',
@@ -61,7 +62,21 @@ symbol_utf8 <- list(
   "fancy_question_mark" = '\u2753',
   "neq" = "\u2260",
   "geq" = "\u2265",
-  "leq" = "\u2264"
+  "leq" = "\u2264",
+
+  "upper_block_1" = "\u2594",
+  "upper_block_4" = "\u2580",
+
+  "lower_block_1" = "\u2581",
+  "lower_block_2" = "\u2582",
+  "lower_block_3" = "\u2583",
+  "lower_block_4" = "\u2584",
+  "lower_block_5" = "\u2585",
+  "lower_block_6" = "\u2586",
+  "lower_block_7" = "\u2587",
+  "lower_block_8" = "\u2588",
+
+  "full_block" = "\u2588"
 )
 
 symbol_win <- list(
@@ -82,6 +97,7 @@ symbol_win <- list(
   "bullet" = '*',
   "dot" = '.',
   "line" = '\u2500',
+  "double_line" = "=",
   "ellipsis" = '...',
   "pointer" = '>',
   "info" = 'i',
@@ -103,7 +119,21 @@ symbol_win <- list(
   "fancy_question_mark" = "(?)",
   "neq" = "!=",
   "geq" = ">=",
-  "leq" = "<="
+  "leq" = "<=",
+
+  "upper_block_1" = "^",
+  "upper_block_4" = "^",
+
+  "lower_block_1" = ".",
+  "lower_block_2" = "_",
+  "lower_block_3" = "_",
+  "lower_block_4" = "=",
+  "lower_block_5" = "=",
+  "lower_block_6" = "*",
+  "lower_block_7" = "\u2588",
+  "lower_block_8" = "\u2588",
+
+  "full_block" = "\u2588"
 )
 
 symbol_win_rstudio <- list(
@@ -124,6 +154,7 @@ symbol_win_rstudio <- list(
   "bullet" = '\u25CF',
   "dot" = '.',
   "line" = '\u2500',
+  "double_line" = "\u2550",
   "ellipsis" = '\u2026',
   "pointer" = '>',
   "info" = 'i',
@@ -145,7 +176,21 @@ symbol_win_rstudio <- list(
   "fancy_question_mark" = '(?)',
   "neq" = "!=",
   "geq" = ">=",
-  "leq" = "<="
+  "leq" = "<=",
+
+  "upper_block_1" = "\u2594",
+  "upper_block_4" = "\u2580",
+
+  "lower_block_1" = "\u2581",
+  "lower_block_2" = "\u2582",
+  "lower_block_3" = "\u2583",
+  "lower_block_4" = "\u2584",
+  "lower_block_5" = "\u2585",
+  "lower_block_6" = "\u2586",
+  "lower_block_7" = "\u2587",
+  "lower_block_8" = "\u2588",
+
+  "full_block" = "\u2588"
 )
 
 symbol_win_rgui <- list(
@@ -166,6 +211,7 @@ symbol_win_rgui <- list(
   "bullet" = '\u25CF',
   "dot" = '.',
   "line" = '\u2500',
+  "double_line" = "=",
   "ellipsis" = '\u2026',
   "pointer" = '>',
   "info" = 'i',
@@ -187,7 +233,21 @@ symbol_win_rgui <- list(
   "fancy_question_mark" = '(?)',
   "neq" = "!=",
   "geq" = ">=",
-  "leq" = "<="
+  "leq" = "<=",
+
+  "upper_block_1" = "^",
+  "upper_block_4" = "\u2580",
+
+  "lower_block_1" = ".",
+  "lower_block_2" = "_",
+  "lower_block_3" = "_",
+  "lower_block_4" = "\u2584",
+  "lower_block_5" = "=",
+  "lower_block_6" = "*",
+  "lower_block_7" = "#",
+  "lower_block_8" = "\u2588",
+
+  "full_block" = "\u2588"
 )
 
 is_windows <- function() {
@@ -207,7 +267,7 @@ is_rgui <- function() {
     symbol <<- symbol_win_rgui
   } else if (is_windows() && is_r_studio()) {
     symbol <<- symbol_win_rstudio
-  } else if (grepl("UTF-8", Sys.getenv("LANG"))) {
+  } else if (l10n_info()$`UTF-8`) {
     symbol <<- symbol_utf8
   } else {
     symbol <<- symbol_win
